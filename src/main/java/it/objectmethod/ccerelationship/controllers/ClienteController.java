@@ -1,5 +1,6 @@
 package it.objectmethod.ccerelationship.controllers;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,19 @@ public class ClienteController {
 			response = new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
 		return response;
+	}
+
+	@GetMapping("/list")
+	public ResponseEntity<List<Cliente>> getAll() {
+		List<Cliente> cli = null;
+		ResponseEntity<List<Cliente>> resp = null;
+		try {
+			cli = clienteRepo.findAll();
+			resp = new ResponseEntity<>(cli, HttpStatus.OK);
+		} catch (Exception e) {
+			resp = new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		return resp;
 	}
 
 	@PostMapping("/save")
