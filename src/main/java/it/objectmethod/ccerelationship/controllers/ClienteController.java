@@ -40,8 +40,8 @@ public class ClienteController {
 	public ResponseEntity<Cliente> saveCliente(@RequestBody Cliente c) {
 		ResponseEntity<Cliente> response = null;
 		try {
-			for (IndirizziCliente IndCli : c.getIndCli()) {
-				IndCli.setCliente(c);
+			for (IndirizziCliente indirizzi : c.getIndirizzi()) {
+				indirizzi.setCliente(c);
 			}
 			Cliente cli = clienteRepo.save(c);
 			response = new ResponseEntity<>(cli, HttpStatus.ACCEPTED);

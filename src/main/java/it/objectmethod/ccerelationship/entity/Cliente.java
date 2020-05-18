@@ -89,7 +89,7 @@ public class Cliente {
 
 	@JoinColumn(name = "cliente_id")
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	private List<IndirizziCliente> IndCli;
+	private List<IndirizziCliente> indirizzi;
 
 	public int getId() {
 		return id;
@@ -275,12 +275,12 @@ public class Cliente {
 		this.email = email;
 	}
 
-	public List<IndirizziCliente> getIndCli() {
-		return IndCli;
+	public List<IndirizziCliente> getIndirizzi() {
+		return indirizzi;
 	}
 
-	public void setIndCli(List<IndirizziCliente> indCli) {
-		IndCli = indCli;
+	public void setIndirizzi(List<IndirizziCliente> indirizzi) {
+		this.indirizzi = indirizzi;
 	}
 
 	@Override
@@ -292,7 +292,7 @@ public class Cliente {
 				+ comuneNascita + ", nome=" + nome + ", provinciaNascita=" + provinciaNascita + ", sesso=" + sesso
 				+ ", statoNascita=" + statoNascita + ", tipo=" + tipo + ", dataNascita=" + dataNascita
 				+ ", condizioniPagamento=" + condizioniPagamento + ", note=" + note + ", email=" + email + ", IndCli="
-				+ IndCli + "]";
+				+ indirizzi + "]";
 	}
 
 }
