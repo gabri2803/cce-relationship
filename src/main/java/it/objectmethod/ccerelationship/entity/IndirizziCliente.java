@@ -34,13 +34,13 @@ public class IndirizziCliente {
 	private String nazione;
 
 	@Column(name = "fatturazione")
-	private byte fatturazione;
+	private boolean fatturazione;
 
 	@Column(name = "destinatario")
 	private String destinatario;
 
 	@Column(name = "attivo")
-	private byte attivo;
+	private boolean attivo;
 
 	@JsonIgnore
 	@ManyToOne
@@ -94,11 +94,11 @@ public class IndirizziCliente {
 		this.nazione = nazione;
 	}
 
-	public byte getFatturazione() {
+	public boolean getFatturazione() {
 		return fatturazione;
 	}
 
-	public void setFatturazione(byte fatturazione) {
+	public void setFatturazione(boolean fatturazione) {
 		this.fatturazione = fatturazione;
 	}
 
@@ -110,11 +110,11 @@ public class IndirizziCliente {
 		this.destinatario = destinatario;
 	}
 
-	public byte getAttivo() {
+	public boolean getAttivo() {
 		return attivo;
 	}
 
-	public void setAttivo(byte attivo) {
+	public void setAttivo(boolean attivo) {
 		this.attivo = attivo;
 	}
 
